@@ -14,6 +14,7 @@
         isTree: true,
         expandOnHover: 700,
         startCollapsed: false,
+        rtl: true,
         change: function(){
             console.log('Relocated item');
         }
