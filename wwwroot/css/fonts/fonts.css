@@ -1,0 +1,22 @@
+/*  custom font
+/* ------------------------------------ */
+@font-face {
+  font-family: 'BYekan';
+  src: url('./fonts/BYekan.eot?#') format('eot'),  /* IE6?8 */
+       url('./fonts/BYekan.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('./fonts/BYekan.ttf') format('truetype');  /* Saf3?5, Chrome4+, FF3.5, Opera 10+ */
+}
+
+@font-face {
+  font-family: 'BKoodak';
+  src: url('./fonts/BKoodakBold.eot?#') format('eot'),  /* IE6?8 */
+       url('./fonts/BKoodakBold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('./fonts/BKoodakBold.ttf') format('truetype');  /* Saf3?5, Chrome4+, FF3.5, Opera 10+ */
+}
+
+@font-face {
+  font-family: 'BBardiya';
+  src: url('./fonts/BBardiya.eot?#') format('eot'),  /* IE6?8 */
+       url('./fonts/BBardiya.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('./fonts/BBardiya.ttf') format('truetype');  /* Saf3?5, Chrome4+, FF3.5, Opera 10+ */
+}
