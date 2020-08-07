@@ -11,30 +11,37 @@
             @Html.AntiForgeryToken()
             @Html.HiddenFor(model => model.Id)
             <div class="panel panel-default">
+                <div class="panel-heading clearfix">
+                    <h4 class="panel-title pull-right" style="padding-top: 5px;"> 
+                        منو
+                    </h4>
+                    <div class="pull-left">
+                        <button type="submit" class="btn btn-success">ذخیره</button>
+                    </div>
+                </div>
                 <div class="panel-body">
-                    <button type="submit" class="btn btn-success">ذخیره</button>
+                    
                 </div>
             </div>
             <ol class="sortable ui-sortable mjs-nestedSortable-branch mjs-nestedSortable-expanded">
 		   <li style="display: list-item;" class="mjs-nestedSortable-branch mjs-nestedSortable-expanded" id="menuItem_2" data-foo="bar">
-		   <div class="menuDiv">
-			   <span title="Click to show/hide children" class="disclose ui-icon ui-icon-minusthick">
-			   <span></span>
-			   </span>
-			   <span title="Click to show/hide item editor" data-id="2" class="expandEditor ui-icon ui-icon-triangle-1-n">
-			   <span></span>
-			   </span>
-			   <span>
-			   <span data-id="2" class="itemTitle">a</span>
-			   <span title="Click to delete item." data-id="2" class="deleteMenu ui-icon ui-icon-closethick">
-			   <span></span>
-			   </span>
-			   </span>
-			   <div id="menuEdit2" class="menuEdit hidden">
-				   <p>
-					   Content or form, or nothing here. Whatever you want.
-				   </p>
-			   </div>
+		   <div class="menuDiv panel panel-default">
+               <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Collapsible Group Item #1
+                        </a>
+                    </h4>
+                </div>
+               <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label asp-for="Names[0]">نام</label>
+                            <input asp-for="Names[0]" class="form-control">
+                        </div>
+                        
+                    </div>
+                </div>
 		   </div>
 		   <ol>
 			   <li style="display: list-item;" class="mjs-nestedSortable-branch mjs-nestedSortable-expanded" id="menuItem_4" data-foo="baz">
@@ -51,7 +58,7 @@
 				   <span></span>
 				   </span>
 				   </span>
-				   <div id="menuEdit4" class="menuEdit hidden">
+				   <div id="menuEdit4" class="menuEdit ">
 					   <p>
 						   Content or form, or nothing here. Whatever you want.
 					   </p>
@@ -72,7 +79,7 @@
 					   <span></span>
 					   </span>
 					   </span>
-					   <div id="menuEdit6" class="menuEdit hidden">
+					   <div id="menuEdit6" class="menuEdit ">
 						   <p>
 							   Content or form, or nothing here. Whatever you want.
 						   </p>
@@ -95,7 +102,7 @@
 				   <span></span>
 				   </span>
 				   </span>
-				   <div id="menuEdit5" class="menuEdit hidden">
+				   <div id="menuEdit5" class="menuEdit ">
 					   <p>
 						   Content or form, or nothing here. Whatever you want.
 					   </p>
@@ -120,7 +127,7 @@
 			   <span></span>
 			   </span>
 			   </span>
-			   <div id="menuEdit7" class="menuEdit hidden">
+			   <div id="menuEdit7" class="menuEdit ">
 				   <p>
 					  Content or form, or nothing here. Whatever you want.
 				   </p>
@@ -141,7 +148,7 @@
 			   <span></span>
 			   </span>
 			   </span>
-			   <div id="menuEdit3" class="menuEdit hidden">
+			   <div id="menuEdit3" class="menuEdit ">
 				   <p>
 					   Content or form, or nothing here. Whatever you want.
 				   </p>
