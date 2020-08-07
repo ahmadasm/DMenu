@@ -51,6 +51,6 @@
     }
     $('#toArray').click(function(){
         serialized = $('ol.sortable').nestedSortable('serialize');
-        alert(serialized);
+        alert(JSON.stringify(serialized));
     })
 });

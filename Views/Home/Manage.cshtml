@@ -10,6 +10,7 @@
         <form method="POST">
             @Html.AntiForgeryToken()
             @Html.HiddenFor(model => model.Id)
+            @Html.HiddenFor(model => model.Parents)
             <div class="panel panel-default">
                 <div class="panel-heading clearfix">
                     <h4 class="panel-title pull-right" style="padding-top: 5px;"> 
