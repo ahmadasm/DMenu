@@ -28,6 +28,16 @@ namespace MenuTest.Controllers
             editbaleMenu.Id = 12;
             return View(editbaleMenu);
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Manage(EditableMenu model)
+        {
+            if(ModelState.IsValid)
+            {
+                
+            }
+            return View();
+        }
 
         public IActionResult Privacy()
         {
