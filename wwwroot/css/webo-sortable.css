@@ -22,14 +22,7 @@ ol.sortable,ol.sortable ol {
 }
 
 .sortable li div {
-    
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
     cursor: move;
-    border-color: #D4D4D4 #D4D4D4 #BCBCBC;
-    margin: 0;
-    
 }
 
 li.mjs-nestedSortable-collapsed.mjs-nestedSortable-hovering div {
@@ -57,6 +50,7 @@ li.mjs-nestedSortable-collapsed.mjs-nestedSortable-hovering div {
 }
 
 .menuDiv {
+    margin-bottom: 10px;
 }
 
 .menuEdit {
