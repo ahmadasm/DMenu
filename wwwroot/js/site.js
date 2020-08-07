@@ -42,12 +42,11 @@
     }
     function SetName(menuItem,index)
     {
-        var title = $(menuItem).find('.panel-title a');
-        title.text(index);
+        //var title = $(menuItem).find('.panel-title a');
+        //title.text(index);
         var nameInput = $(menuItem).find('.menu-item-name');
         var newName = 'Names[' + index + ']';
         nameInput.attr('name',newName);
-        //nameInput.val(index);
     }
     $("#btnSaveEditedMenu").click(function(e){
         e.preventDefault();
