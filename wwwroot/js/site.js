@@ -30,6 +30,7 @@
             {
                 SetId(menuItems[i],i);
                 SetName(menuItems[i],i);
+                SetLink(menuItems[i],i);
                 //alert(i + " : " + menuItems[i]);
             }
             
@@ -46,6 +47,14 @@
         //title.text(index);
         var nameInput = $(menuItem).find('.menu-item-name');
         var newName = 'Text[' + index + ']';
+        nameInput.attr('name',newName);
+    }
+    function SetLink(menuItem,index)
+    {
+        //var title = $(menuItem).find('.panel-title a');
+        //title.text(index);
+        var nameInput = $(menuItem).find('.menu-item-link');
+        var newName = 'Links[' + index + ']';
         nameInput.attr('name',newName);
     }
     $("#btnSaveEditedMenu").click(function(e){
