@@ -17,11 +17,12 @@
                     </h4>
                     <div class="pull-left">
                         <button type="submit" class="btn btn-success">ذخیره</button>
+                        <button type="button" id="toArray" class="btn btn-success">آرایه</button>
                     </div>
                 </div>
                 <div class="panel-body">
                     <ol class="sortable ui-sortable mjs-nestedSortable-branch mjs-nestedSortable-expanded">
-                        <li style="display: list-item;" class="mjs-nestedSortable-branch mjs-nestedSortable-expanded" id="menuItem_1" data-foo="bar">
+                        <li style="display: list-item;" class="webo-menu-item mjs-nestedSortable-branch mjs-nestedSortable-expanded" id="menuItem_1" data-foo="bar">
                             <div class="menuDiv panel panel-default">
                                 <div class="panel-heading" role="tab" id="headingOne">
                                     <h4 class="panel-title">
@@ -33,15 +34,15 @@
                                 <div id="collapseOne1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                                     <div class="panel-body">
                                         <div class="form-group">
-                                            <label asp-for="Names[0]">نام</label>
-                                            <input asp-for="Names[0]" class="form-control">
+                                            <label asp-for="Names[0]" >نام</label>
+                                            <input asp-for="Names[0]" class="menu-item-name form-control">
                                         </div>
                                         
                                     </div>
                                 </div>
                             </div>
                         <ol>
-                            <li style="display: list-item;" class="mjs-nestedSortable-branch mjs-nestedSortable-expanded" id="menuItem_2" data-foo="baz">
+                            <li style="display: list-item;" class="webo-menu-item mjs-nestedSortable-branch mjs-nestedSortable-expanded" id="menuItem_2" data-foo="baz">
                             <div class="menuDiv panel panel-default">
                                 <div class="panel-heading" role="tab" id="headingOne">
                                     <h4 class="panel-title">
@@ -54,7 +55,7 @@
                                     <div class="panel-body">
                                         <div class="form-group">
                                             <label asp-for="Names[1]">نام</label>
-                                            <input asp-for="Names[1]" class="form-control">
+                                            <input asp-for="Names[1]" class="menu-item-name form-control">
                                         </div>
                                         
                                     </div>
@@ -65,7 +66,7 @@
                         </li>
                         <ol>
                         </ol>
-                        <li class="mjs-nestedSortable-leaf mjs-nestedSortable-branch mjs-nestedSortable-expanded" id="menuItem_3">
+                        <li class="webo-menu-item mjs-nestedSortable-leaf mjs-nestedSortable-branch mjs-nestedSortable-expanded" id="menuItem_3">
                         <div class="menuDiv panel panel-default">
                                 <div class="panel-heading" role="tab" id="headingOne">
                                     <h4 class="panel-title">
@@ -78,7 +79,7 @@
                                     <div class="panel-body">
                                         <div class="form-group">
                                             <label asp-for="Names[2]">نام</label>
-                                            <input asp-for="Names[2]" class="form-control">
+                                            <input asp-for="Names[2]" class="menu-item-name form-control">
                                         </div>
                                         
                                     </div>
