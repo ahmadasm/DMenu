@@ -45,7 +45,7 @@
         //var title = $(menuItem).find('.panel-title a');
         //title.text(index);
         var nameInput = $(menuItem).find('.menu-item-name');
-        var newName = 'Names[' + index + ']';
+        var newName = 'Text[' + index + ']';
         nameInput.attr('name',newName);
     }
     $("#btnSaveEditedMenu").click(function(e){
