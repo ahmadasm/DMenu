@@ -28,13 +28,19 @@
             var menuItems = $('li.webo-menu-item');
             for(var i = 0; i < menuItems.length;i++)
             {
-                SetHeader(menuItems[i],i);
+                SetId(menuItems[i],i);
+                SetName(menuItems[i],i);
                 //alert(i + " : " + menuItems[i]);
             }
             
         }
     });
-    function SetHeader(menuItem,index)
+    function SetId(menuItem,index)
+    {   
+        var newId = 'menuItem_' + index;
+        $(menuItem).attr('id',newId);
+    }
+    function SetName(menuItem,index)
     {
         var title = $(menuItem).find('.panel-title a');
         title.text(index);
@@ -43,4 +49,8 @@
         nameInput.attr('name',newName);
         //nameInput.val(index);
     }
+    $('#toArray').click(function(){
+        serialized = $('ol.sortable').nestedSortable('serialize');
+        alert(serialized);
+    })
 });
