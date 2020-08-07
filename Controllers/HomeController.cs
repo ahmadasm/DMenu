@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MenuTest.Models;
-
+using MenuTest.ViewModels;
 namespace MenuTest.Controllers
 {
     public class HomeController : Controller
@@ -24,7 +24,9 @@ namespace MenuTest.Controllers
         }
         public IActionResult Manage()
         {
-            return View();
+            var editbaleMenu = new EditableMenu();
+            editbaleMenu.Id = 12;
+            return View(editbaleMenu);
         }
 
         public IActionResult Privacy()
