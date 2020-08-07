@@ -7,23 +7,21 @@
         <h4>فهرست انتخاب</h4>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-        <form method="POST">
+        <form method="POST" id="menuEditorForm">
             @Html.AntiForgeryToken()
             @Html.HiddenFor(model => model.Id)
-            @Html.HiddenFor(model => model.Parents)
             <div class="panel panel-default">
                 <div class="panel-heading clearfix">
                     <h4 class="panel-title pull-right" style="padding-top: 5px;"> 
                         منو
                     </h4>
                     <div class="pull-left">
-                        <button type="submit" class="btn btn-success">ذخیره</button>
-                        <button type="button" id="toArray" class="btn btn-success">آرایه</button>
+                        <button type="button" id="btnSaveEditedMenu" class="btn btn-success">ذخیره</button>
                     </div>
                 </div>
                 <div class="panel-body">
                     <ol class="sortable ui-sortable mjs-nestedSortable-branch mjs-nestedSortable-expanded">
-                        <li style="display: list-item;" class="webo-menu-item mjs-nestedSortable-branch mjs-nestedSortable-expanded" id="menuItem_1" data-foo="bar">
+                        <li style="display: list-item;" class="webo-menu-item mjs-nestedSortable-branch mjs-nestedSortable-expanded" id="menuItem_0" data-foo="bar">
                             <div class="menuDiv panel panel-default">
                                 <div class="panel-heading" role="tab" id="headingOne">
                                     <h4 class="panel-title">
@@ -43,7 +41,7 @@
                                 </div>
                             </div>
                         <ol>
-                            <li style="display: list-item;" class="webo-menu-item mjs-nestedSortable-branch mjs-nestedSortable-expanded" id="menuItem_2" data-foo="baz">
+                            <li style="display: list-item;" class="webo-menu-item mjs-nestedSortable-branch mjs-nestedSortable-expanded" id="menuItem_1" data-foo="baz">
                             <div class="menuDiv panel panel-default">
                                 <div class="panel-heading" role="tab" id="headingOne">
                                     <h4 class="panel-title">
@@ -67,7 +65,7 @@
                         </li>
                         <ol>
                         </ol>
-                        <li class="webo-menu-item mjs-nestedSortable-leaf mjs-nestedSortable-branch mjs-nestedSortable-expanded" id="menuItem_3">
+                        <li class="webo-menu-item mjs-nestedSortable-leaf mjs-nestedSortable-branch mjs-nestedSortable-expanded" id="menuItem_2">
                         <div class="menuDiv panel panel-default">
                                 <div class="panel-heading" role="tab" id="headingOne">
                                     <h4 class="panel-title">

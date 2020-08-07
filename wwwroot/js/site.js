@@ -49,8 +49,25 @@
         nameInput.attr('name',newName);
         //nameInput.val(index);
     }
-    $('#toArray').click(function(){
+    $("#btnSaveEditedMenu").click(function(e){
+        e.preventDefault();
+        AddParentIds();
+        $('#menuEditorForm').submit();
+    });
+    function AddParentIds()
+    {
         serialized = $('ol.sortable').nestedSortable('serialize');
-        alert(JSON.stringify(serialized));
-    })
+        var data = serialized.split("&");
+        for(var key in data)
+        {
+            var itemIndex = (data[key].split("=")[0]).replace("menuItem[","").replace("]","");
+            var hiddenInputName = "Parents[" + itemIndex + "]"; 
+            var hiddenValue = data[key].split("=")[1] 
+            $("<input>").attr({ 
+                name: hiddenInputName,  
+                type: "hidden", 
+                value: hiddenValue 
+            }).appendTo("#menuEditorForm"); 
+        }
+    }
 });
