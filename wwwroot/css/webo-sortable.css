@@ -14,7 +14,7 @@
 
 ol {
     max-width: 450px;
-    padding-left: 25px;
+    padding-right: 10px;
 }
 
 ol.sortable,ol.sortable ol {
@@ -22,14 +22,14 @@ ol.sortable,ol.sortable ol {
 }
 
 .sortable li div {
-    border: 1px solid #d4d4d4;
+    
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
     cursor: move;
     border-color: #D4D4D4 #D4D4D4 #BCBCBC;
     margin: 0;
-    padding: 3px;
+    
 }
 
 li.mjs-nestedSortable-collapsed.mjs-nestedSortable-hovering div {
@@ -57,7 +57,6 @@ li.mjs-nestedSortable-collapsed.mjs-nestedSortable-hovering div {
 }
 
 .menuDiv {
-    background: #EBEBEB;
 }
 
 .menuEdit {
