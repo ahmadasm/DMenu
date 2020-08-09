@@ -5,7 +5,7 @@ namespace MenuTest.ViewComponents
     {
         public IViewComponentResult Invoke()
         {
-            return View("~/Shared/Components/CustomLink/CustomLinkItem.cshtml");
+            return View("~/Views/Shared/Components/CustomLink/CustomLinkItem.cshtml");
         }
     }
 }
