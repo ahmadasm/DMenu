@@ -94,6 +94,13 @@
         var panelCollapse = panelCollapseList.first();
         panelCollapse.attr('id',newId);
     }
+    function SetTabCheckboxDefault(index)
+    {
+        var menuItems = $('li.webo-menu-item');
+        var nameInput = $(menuItems[index]).find('.menu-item-tab');
+        alert($(nameInput).val());
+        nameInput.prop('checked',true);
+    }
     function AddParentIds()
     {
         serialized = $('ol.sortable').nestedSortable('serialize');
@@ -151,6 +158,7 @@
             var itemLink = $(items[i]).data('link');
             var itemHeader = $(items[i]).data('header');
             AddNewMenuItem(itemText,itemLink,itemHeader,newItemIndex);
+            SetTabCheckboxDefault(newItemIndex);
         }
         ReorderMenuItems();
     });
