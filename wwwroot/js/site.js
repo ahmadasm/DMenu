@@ -77,11 +77,7 @@
         var newName = 'OpenInNewTab[' + index + ']';
         nameInput.attr('name',newName);
     }
-    $("#btnSaveEditedMenu").click(function(e){
-        e.preventDefault();
-        AddParentIds();
-        $('#menuEditorForm').submit();
-    });
+    
     function AddParentIds()
     {
         serialized = $('ol.sortable').nestedSortable('serialize');
@@ -98,4 +94,13 @@
             }).appendTo("#menuEditorForm"); 
         }
     }
+    $("#btnSaveEditedMenu").click(function(e){
+        e.preventDefault();
+        AddParentIds();
+        $('#menuEditorForm').submit();
+    });
+    $('.btn-remove-menu-item').click(function(){
+        var menuItem = $(this).closest('.webo-menu-item');
+        $(menuItem).remove();
+    });
 });
