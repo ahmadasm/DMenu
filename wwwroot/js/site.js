@@ -25,17 +25,7 @@
         update: function(e, ui) {
         },
         stop: function(event, ui) {
-            var menuItems = $('li.webo-menu-item');
-            for(var i = 0; i < menuItems.length;i++)
-            {
-                SetId(menuItems[i],i);
-                SetName(menuItems[i],i);
-                SetLink(menuItems[i],i);
-                SetCss(menuItems[i],i);
-                SetNewTab(menuItems[i],i);
-                //alert(i + " : " + menuItems[i]);
-            }
-            
+            ReorderMenuItems();    
         }
     });
     $('.menu-item-name').on('input propertychange paste',function(){
@@ -44,6 +34,19 @@
         var itemTitle = itemTitleList.first();
         itemTitle.html($(this).val());
     });
+    function ReorderMenuItems()
+    {
+        var menuItems = $('li.webo-menu-item');
+        for(var i = 0; i < menuItems.length;i++)
+        {
+            SetId(menuItems[i],i);
+            SetName(menuItems[i],i);
+            SetLink(menuItems[i],i);
+            SetCss(menuItems[i],i);
+            SetNewTab(menuItems[i],i);
+            //alert(i + " : " + menuItems[i]);
+        }
+    }
     function SetId(menuItem,index)
     {   
         var newId = 'menuItem_' + index;
