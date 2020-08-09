@@ -28,7 +28,7 @@
             ReorderMenuItems();    
         }
     });
-    $('.menu-item-name').on('input propertychange paste',function(){
+    $(document).on('input propertychange paste', '.menu-item-name', function(){ 
         var menuItem = $(this).closest('.webo-menu-item');
         var itemTitleList = $(menuItem).find('.panel-title a');
         var itemTitle = itemTitleList.first();
