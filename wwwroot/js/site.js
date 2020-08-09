@@ -32,6 +32,7 @@
                 SetName(menuItems[i],i);
                 SetLink(menuItems[i],i);
                 SetCss(menuItems[i],i);
+                SetNewTab(menuItems[i],i);
                 //alert(i + " : " + menuItems[i]);
             }
             
@@ -62,6 +63,12 @@
     {
         var nameInput = $(menuItem).find('.menu-item-css');
         var newName = 'CssClasses[' + index + ']';
+        nameInput.attr('name',newName);
+    }
+    function SetNewTab(menuItem,index)
+    {
+        var nameInput = $(menuItem).find('.menu-item-tab');
+        var newName = 'OpenInNewTab[' + index + ']';
         nameInput.attr('name',newName);
     }
     $("#btnSaveEditedMenu").click(function(e){
