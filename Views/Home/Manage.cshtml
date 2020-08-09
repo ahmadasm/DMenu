@@ -4,7 +4,33 @@
 }
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-        <h4>فهرست انتخاب</h4>
+        <h4>گزینه های منو</h4>
+        <div class="panel-group" id="menu-item-select-list" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#menu-item-select-list" href="#customLinkItem" aria-expanded="false" aria-controls="collapseOne1">
+                        پیوند دلخواه
+                        </a>
+                    </h4>
+                </div>
+                <div id="customLinkItem" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label asp-for="Text[0]" >متن</label>
+                            <input asp-for="Text[0]" class="menu-item-name form-control">
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Links[0]">نشانی اینترنتی</label>
+                            <input asp-for="Links[0]" class="menu-item-link form-control">
+                        </div>
+                    </div>
+                    <div class="panel-footer text-left">
+                        <button type="button" class="btn-add-menu-item btn btn-info">افزودن</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
         <form method="POST" id="menuEditorForm">
