@@ -31,6 +31,7 @@
                 SetId(menuItems[i],i);
                 SetName(menuItems[i],i);
                 SetLink(menuItems[i],i);
+                SetCss(menuItems[i],i);
                 //alert(i + " : " + menuItems[i]);
             }
             
@@ -55,6 +56,12 @@
         //title.text(index);
         var nameInput = $(menuItem).find('.menu-item-link');
         var newName = 'Links[' + index + ']';
+        nameInput.attr('name',newName);
+    }
+    function SetCss(menuItem,index)
+    {
+        var nameInput = $(menuItem).find('.menu-item-css');
+        var newName = 'CssClasses[' + index + ']';
         nameInput.attr('name',newName);
     }
     $("#btnSaveEditedMenu").click(function(e){
