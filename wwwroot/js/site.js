@@ -44,6 +44,7 @@
             SetLink(menuItems[i],i);
             SetCss(menuItems[i],i);
             SetNewTab(menuItems[i],i);
+            SetCollapseId(menuItems[i],i);
             //alert(i + " : " + menuItems[i]);
         }
     }
@@ -80,7 +81,19 @@
         var newName = 'OpenInNewTab[' + index + ']';
         nameInput.attr('name',newName);
     }
-    
+    function SetCollapseId(menuItem,index)
+    {
+        //set href
+        var newHref = '#ItemCollapse-' + index;
+        var itemTitleList = $(menuItem).find('.panel-title a');
+        var itemTitle = itemTitleList.first();
+        itemTitle.attr('href',newHref);
+        //set collapse id 
+        var newId = 'ItemCollapse-' + index;
+        var panelCollapseList = $(menuItem).find('.panel-collapse');
+        var panelCollapse = panelCollapseList.first();
+        panelCollapse.attr('id',newId);
+    }
     function AddParentIds()
     {
         serialized = $('ol.sortable').nestedSortable('serialize');
@@ -97,6 +110,7 @@
             }).appendTo("#menuEditorForm"); 
         }
     }
+    
     function AddNewMenuItem(text,link,header)
     {
         var newItem = '<li class="webo-menu-item mjs-nestedSortable-leaf mjs-nestedSortable-branch mjs-nestedSortable-expanded" id="menuItem_2">'+
