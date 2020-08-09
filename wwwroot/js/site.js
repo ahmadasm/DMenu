@@ -161,7 +161,6 @@
             var itemLink = $(items[i]).data('link');
             var itemHeader = $(items[i]).data('header');
             var linkIsEnabled = $(items[i]).data('link-is-enabled');
-            alert(linkIsEnabled);
             AddNewMenuItem(itemText,itemLink,itemHeader,linkIsEnabled,newItemIndex);
             SetTabCheckboxDefault(newItemIndex);
         }
