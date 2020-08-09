@@ -105,5 +105,6 @@
     $('.btn-remove-menu-item').click(function(){
         var menuItem = $(this).closest('.webo-menu-item');
         $(menuItem).remove();
+        ReorderMenuItems();
     });
 });
