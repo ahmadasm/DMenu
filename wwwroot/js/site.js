@@ -99,7 +99,7 @@
         var menuItems = $('li.webo-menu-item');
         var nameInput = $(menuItems[index]).find('.menu-item-tab');
         //alert($(nameInput).val());
-        nameInput.prop('checked',true);
+        nameInput.prop('checked',false);
     }
     function AddParentIds()
     {
