@@ -121,8 +121,8 @@
         '<div class="panel-body"><div class="form-group"><label>متن</label>'+
         '<input  class="menu-item-name form-control" value="'+
         text + '"></div><div class="form-group"><label>نشانی اینترنتی</label><input class="menu-item-link form-control" value="'+
-        link + '"></div><div class="form-group"><label>کلاس CSS</label><inputclass="menu-item-css form-control">'+
-        '</div><div class="form-group"><input type="checkbox" class="menu-item-tab"><label>باز شدن در تب جدید</label>'+
+        link + '"></div><div class="form-group"><label>کلاس CSS</label><input class="menu-item-css form-control">'+
+        '</div><div class="form-group"><input type="checkbox" class="menu-item-tab">&nbsp;<label>باز شدن در تب جدید </label>'+
         '</div></div><div class="panel-footer text-left"><button type="button" class="btn-remove-menu-item btn btn-danger" >حذف</button>'+
         '</div></div></div></li>';
         $('.sortable').append(newItem);
