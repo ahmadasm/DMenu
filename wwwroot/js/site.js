@@ -157,7 +157,8 @@
             var itemText = $(items[i]).data('text');
             var itemLink = $(items[i]).data('link');
             var itemHeader = $(items[i]).data('header');
-            AddNewMenuItem(itemText,itemLink,itemHeader,newItemIndex);
+            var linkIsEnabled = $(items[i]).data('link-is-enabled');
+            AddNewMenuItem(itemText,itemLink,itemHeader,linkIsEnabled,newItemIndex);
             SetTabCheckboxDefault(newItemIndex);
         }
         ReorderMenuItems();
