@@ -98,7 +98,7 @@
     {
         var menuItems = $('li.webo-menu-item');
         var nameInput = $(menuItems[index]).find('.menu-item-tab');
-        alert($(nameInput).val());
+        //alert($(nameInput).val());
         nameInput.prop('checked',true);
     }
     function AddParentIds()
@@ -118,8 +118,11 @@
         }
     }
     
-    function AddNewMenuItem(text,link,header,newItemIndex)
+    function AddNewMenuItem(text,link,header,linkIsEnabled,newItemIndex)
     {
+        var readonlyAttribute = "";
+        if(!linkIsEnabled)
+            readonlyAttribute = "readonly";
         var newItem = '<li class="webo-menu-item mjs-nestedSortable-leaf mjs-nestedSortable-branch mjs-nestedSortable-expanded" id="menuItem_2">'+
         '<div class="menuDiv panel panel-default"><div class="panel-heading" role="tab" id="headingOne">'+
         '<h4 class="panel-title"><a role="button" data-toggle="collapse" href="#ItemCollapse-'+ 
@@ -130,7 +133,7 @@
         '<div class="panel-body"><div class="form-group"><label>متن</label>'+
         '<input  class="menu-item-name form-control" value="'+
         text + '"></div><div class="form-group"><label>نشانی اینترنتی</label><input class="menu-item-link form-control" value="'+
-        link + '"></div><div class="form-group"><label>کلاس CSS</label><input class="menu-item-css form-control">'+
+        link + '" ' + readonlyAttribute + '></div><div class="form-group"><label>کلاس CSS</label><input class="menu-item-css form-control">'+
         '</div><div class="form-group"><input type="checkbox" class="menu-item-tab" value="true">&nbsp;<label>باز شدن در تب جدید </label>'+
         '</div></div><div class="panel-footer text-left"><button type="button" class="btn-remove-menu-item btn btn-danger" >حذف</button>'+
         '</div></div></div></li>';
@@ -158,6 +161,7 @@
             var itemLink = $(items[i]).data('link');
             var itemHeader = $(items[i]).data('header');
             var linkIsEnabled = $(items[i]).data('link-is-enabled');
+            alert(linkIsEnabled);
             AddNewMenuItem(itemText,itemLink,itemHeader,linkIsEnabled,newItemIndex);
             SetTabCheckboxDefault(newItemIndex);
         }
