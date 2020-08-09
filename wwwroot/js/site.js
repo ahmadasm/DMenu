@@ -97,6 +97,22 @@
             }).appendTo("#menuEditorForm"); 
         }
     }
+    function AddNewMenuItem(text,link,header)
+    {
+        var newItem = '<li class="webo-menu-item mjs-nestedSortable-leaf mjs-nestedSortable-branch mjs-nestedSortable-expanded" id="menuItem_2">'+
+        '<div class="menuDiv panel panel-default"><div class="panel-heading" role="tab" id="headingOne">'+
+        '<h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne3" aria-expanded="false" aria-controls="collapseOne3">'+
+        text +
+        '</a></h4></div><div id="collapseOne3" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne">'+
+        '<div class="panel-body"><div class="form-group"><label>متن</label>'+
+        '<input  class="menu-item-name form-control" value="'+
+        text + '"></div><div class="form-group"><label>نشانی اینترنتی</label><input class="menu-item-link form-control" value="'+
+        link + '"></div><div class="form-group"><label>کلاس CSS</label><inputclass="menu-item-css form-control">'+
+        '</div><div class="form-group"><input type="checkbox" class="menu-item-tab"><label>باز شدن در تب جدید</label>'+
+        '</div></div><div class="panel-footer text-left"><button type="button" class="btn-remove-menu-item btn btn-danger" >حذف</button>'+
+        '</div></div></div></li>';
+        $('.sortable').append(newItem);
+    }
     $("#btnSaveEditedMenu").click(function(e){
         e.preventDefault();
         AddParentIds();
@@ -105,6 +121,19 @@
     $('.btn-remove-menu-item').click(function(){
         var menuItem = $(this).closest('.webo-menu-item');
         $(menuItem).remove();
+        ReorderMenuItems();
+    });
+    $(".btn-add-menu-item").click(function(){
+        var itemsWrapperId = $(this).data("items-wrapper-id");
+        var itemWrapper = $(itemsWrapperId);
+        var items = $(itemWrapper).find('.webo-menu-item-checkbox');
+        for(var i=0;i < items.length;i++)
+        {
+            var itemText = $(items[i]).data('text');
+            var itemLink = $(items[i]).data('link');
+            var itemHeader = $(items[i]).data('header');
+            AddNewMenuItem(itemText,itemLink,itemHeader);
+        }
         ReorderMenuItems();
     });
 });

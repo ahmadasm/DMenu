@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/webo-sortable.css" />
     <link rel="stylesheet" href="~/lib/jqueryui/css/jquery-ui.min.css" />
+    <script src="~/lib/adminlte/js/jquery-1.11.0.js"></script>
+    <script src="~/lib/jqueryui/js/jquery-ui.min.js" asp-append-version="true"></script>  
+    <script src="~/lib/adminlte/js/bootstrap.js"></script>
+    <script src="~/js/jquery.mjs.nestedSortable.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
 </head>
 <body>
     <nav class="navbar navbar-default">
@@ -37,12 +42,7 @@
             &copy; 2020 - MenuTest - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
-    <script src="~/lib/adminlte/js/jquery-1.11.0.js"></script>
-    <script src="~/lib/jqueryui/js/jquery-ui.min.js" asp-append-version="true"></script>  
-    <script src="~/lib/adminlte/js/bootstrap.js"></script>
-    <script src="~/js/jquery.mjs.nestedSortable.js" asp-append-version="true"></script>
     
-    <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
