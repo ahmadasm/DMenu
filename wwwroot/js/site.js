@@ -38,6 +38,12 @@
             
         }
     });
+    $('.menu-item-name').on('input propertychange paste',function(){
+        var menuItem = $(this).closest('.webo-menu-item');
+        var itemTitleList = $(menuItem).find('.panel-title a');
+        var itemTitle = itemTitleList.first();
+        itemTitle.html($(this).val());
+    });
     function SetId(menuItem,index)
     {   
         var newId = 'menuItem_' + index;
