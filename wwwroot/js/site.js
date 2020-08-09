@@ -132,11 +132,11 @@
         AddParentIds();
         $('#menuEditorForm').submit();
     });
-    $('.btn-remove-menu-item').click(function(){
+    $(document).on('click', '.btn-remove-menu-item', function(){ 
         var menuItem = $(this).closest('.webo-menu-item');
         $(menuItem).remove();
         ReorderMenuItems();
-    });
+    }); 
     $(".btn-add-menu-item").click(function(){
         var itemsWrapperId = $(this).data("items-wrapper-id");
         var itemWrapper = $(itemsWrapperId);
