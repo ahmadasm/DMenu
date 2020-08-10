@@ -3,12 +3,21 @@ using System.Linq;
 using MenuTest.Models;
 namespace MenuTest.Dal
 {
-    public static class DbInitializer
+    public interface IDbInitializer
     {
-        public static void Init(MenuDbContext dbContext)
+        public void Init();
+    }
+    public class DbInitializer:IDbInitializer
+    {
+        private readonly MenuDbContext _dbContext;
+        public DbInitializer(MenuDbContext dbContext)
         {
-            dbContext.Database.EnsureCreated();
-            if(!dbContext.Menus.Any())
+            _dbContext = dbContext;
+        }
+        public void Init()
+        {
+            _dbContext.Database.EnsureCreated();
+            if(!_dbContext.Menus.Any())
             {
                 var menus = new Menu[]{
                     new Menu{Id = Guid.NewGuid(),Name="منو اصلی",IsPublic=true},
@@ -17,9 +26,9 @@ namespace MenuTest.Dal
 
                 foreach(Menu menu in menus)
                 {
-                    dbContext.Menus.Add(menu);
+                    _dbContext.Menus.Add(menu);
                 }
-                dbContext.SaveChanges();
+                _dbContext.SaveChanges();
             }
         }
     }
