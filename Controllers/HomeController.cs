@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using MenuTest.Dal;
 using MenuTest.Models;
 using MenuTest.ViewModels;
 namespace MenuTest.Controllers
@@ -12,10 +12,11 @@ namespace MenuTest.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly MenuDbContext _dbContext;
+        public HomeController(ILogger<HomeController> logger,MenuDbContext dbContext)
         {
             _logger = logger;
+            _dbContext = dbContext;
         }
 
         public IActionResult Index()
