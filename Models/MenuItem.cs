@@ -10,6 +10,8 @@ namespace MenuTest.Models
         public bool OpenInNewTab { get; set; }
         public string CssClass { get; set; }
         public Guid? ParentId { get; set; }
+        public Guid MenuId { get; set; }
         public virtual ICollection<MenuItem> Children { get; set; }
+        public virtual Menu Menu { get; set; }
     }
 }
