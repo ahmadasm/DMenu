@@ -40,7 +40,9 @@ namespace MenuTest.Controllers
             {
                 UpdateMenu(model);  
                 ClearAllMenuItems(model.Id);
-
+                AddMenuItems(model.Id,model.Text,model.Links,model.CssClasses,model.OpenInNewTab,
+                model.LinkIsEnabled,model.Parents);
+                return RedirectToAction("Index");
             }
             return View(model);
         }
