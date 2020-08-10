@@ -134,7 +134,8 @@
         '<input  class="menu-item-name form-control" value="'+
         text + '"></div><div class="form-group"><label>نشانی اینترنتی</label><input class="menu-item-link form-control" value="'+
         link + '" ' + readonlyAttribute + '></div><div class="form-group"><label>کلاس CSS</label><input class="menu-item-css form-control">'+
-        '</div><div class="form-group"><input type="checkbox" class="menu-item-tab" data-val-required="The Boolean field is required.">&nbsp;<label>باز شدن در تب جدید </label>'+
+        '</div><div class="form-group"><input type="checkbox" class="menu-item-tab" data-val="true" data-val-required="The Boolean field is required." name="OpenInNewTab[' +
+        newItemIndex + ']" value="true">&nbsp;<label>باز شدن در تب جدید </label>'+
         '</div></div><div class="panel-footer text-left"><button type="button" class="btn-remove-menu-item btn btn-danger" >حذف</button>'+
         '</div></div></div></li>';
         $('.sortable').append(newItem);
