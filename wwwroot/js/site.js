@@ -99,7 +99,7 @@
         var menuItems = $('li.webo-menu-item');
         var nameInput = $(menuItems[index]).find('.menu-item-tab');
         //alert($(nameInput).val());
-        nameInput.prop('checked',false);
+        nameInput.prop('checked',true);
     }
     function AddParentIds()
     {
@@ -135,7 +135,7 @@
         text + '"></div><div class="form-group"><label>نشانی اینترنتی</label><input class="menu-item-link form-control" value="'+
         link + '" ' + readonlyAttribute + '></div><div class="form-group"><label>کلاس CSS</label><input class="menu-item-css form-control">'+
         '</div><div class="form-group"><input type="checkbox" class="menu-item-tab" data-val="true" data-val-required="The Boolean field is required." name="OpenInNewTab[' +
-        newItemIndex + ']" value="true">&nbsp;<label>باز شدن در تب جدید </label>'+
+        newItemIndex + ']" value="true" id="OpenInNewTab_' + newItemIndex + '_">&nbsp;<label>باز شدن در تب جدید </label>'+
         '</div></div><div class="panel-footer text-left"><button type="button" class="btn-remove-menu-item btn btn-danger" >حذف</button>'+
         '</div></div></div></li>';
         $('.sortable').append(newItem);
