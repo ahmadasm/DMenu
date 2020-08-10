@@ -1,3 +1,32 @@
-﻿@{
+﻿@model IList<MenuTest.Models.Menu>
+@{
     ViewData["Title"] = "خانه";
 }
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        @if(Model != null && Model.Count > 0)
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>نام</th>
+                        <th>توضیحات</th>
+                        <th>نمایش عمومی</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var menu in Model)
+                    {   
+                        <tr>
+                            <td>@menu.Name</td>
+                            <td>@menu.Description</td>
+                            <td>@menu.PublicToString()</td>
+                            <td></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>

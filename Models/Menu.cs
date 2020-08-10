@@ -11,4 +11,13 @@ namespace MenuTest.Models
         public string Description { get; set; }
         public virtual ICollection<MenuItem> Items { get; set; }
     }
+    public static class MenuExtensions
+    {
+        public static string PublicToString(this Menu menu)
+        {
+            if(menu.IsPublic)
+                return "بله";
+            return "خیر";
+        }
+    }
 }
