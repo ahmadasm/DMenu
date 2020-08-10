@@ -14,5 +14,6 @@ namespace MenuTest.Models
         public Guid MenuId { get; set; }
         public virtual ICollection<MenuItem> Children { get; set; }
         public virtual Menu Menu { get; set; }
+        public virtual MenuItem Parent { get; set; }
     }
 }
