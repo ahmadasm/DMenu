@@ -80,7 +80,25 @@ namespace MenuTest.Controllers
         private void AddMenuItems(Guid menuId,List<string> texts,List<string> Links,List<string> cssClasses,
             List<bool> openInNewTab,List<bool> linkIsEditable,List<string> parents)
         {
-            
+            int itemsCount = linkIsEditable.Count;
+            for (int i = 0; i < itemsCount; i++)
+            {
+                MenuItem item = new MenuItem();
+                item.MenuId = menuId;
+                item.Id = Guid.NewGuid();
+                item.CssClass = cssClasses[i];
+                item.Href = Links[i];
+                item.LinkIsEditable = linkIsEditable[i];
+                item.OpenInNewTab = openInNewTab[i];
+                item.Text = texts[i];
+                item.ParentId = SetParentId(parents[i]);
+            }
+        }
+        private Guid? SetParentId(string inputParentId)
+        {
+            if(string.IsNullOrEmpty(inputParentId))
+                return null;
+            return Guid.NewGuid();
         }
     }
 }
