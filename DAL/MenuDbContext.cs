@@ -13,7 +13,10 @@ namespace MenuTest.Dal
         protected  override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            
+            modelBuilder.Entity<MenuItem>()
+                .HasOne(i => i.Parent)
+                .WithMany(c => c.Children)
+                .HasForeignKey(i => i.ParentId);
         }
     }
 }
