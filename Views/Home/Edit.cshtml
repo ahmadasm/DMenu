@@ -13,6 +13,7 @@
         <form method="POST" id="menuEditorForm">
             @Html.AntiForgeryToken()
             @Html.HiddenFor(model => model.Id)
+            @Html.HiddenFor(model => model.Name)
             <h4>ساختار منو</h4>
             <div class="panel panel-default">
                 <div class="panel-heading clearfix">
