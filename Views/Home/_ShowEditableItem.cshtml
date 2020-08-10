@@ -29,7 +29,15 @@
                 </div>
                 <div class="form-group">
                     <label>نشانی اینترنتی</label>
-                    <input name="@itemHref" class="menu-item-link form-control" value="@Model.Href">
+                    @if(Model.LinkIsEditable)
+                    {
+                        <input name="@itemHref" class="menu-item-link form-control" value="@Model.Href">
+                    }
+                    else
+                    {
+                        <input name="@itemHref" class="menu-item-link form-control" value="@Model.Href" readonly>
+                    }
+                    
                     <input name="@itemLinkIsEnabled" type="hidden" value="@Model.LinkIsEditable.ToString()" class="menu-item-link-status form-control">
                 </div>
                 <div class="form-group">
