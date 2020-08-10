@@ -39,6 +39,7 @@ namespace MenuTest.Controllers
             if(ModelState.IsValid)
             {
                 UpdateMenu(model);  
+                ClearAllMenuItems(model.Id);
             }
             return View(model);
         }
