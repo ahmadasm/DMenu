@@ -162,7 +162,8 @@
     $(".btn-add-menu-item").click(function(){
         var itemsWrapperId = $(this).data("items-wrapper-id");
         var itemWrapper = $(itemsWrapperId);
-        var items = $(itemWrapper).find('.webo-menu-item-checkbox');
+        var items = $(itemWrapper).find('.webo-menu-item-checkbox:checked');
+        alert(items.length);
         for(var i=0;i < items.length;i++)
         {
             var menuItems = $('li.webo-menu-item');
