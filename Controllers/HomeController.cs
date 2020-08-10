@@ -24,15 +24,16 @@ namespace MenuTest.Controllers
             var menus = _dbContext.Menus.ToList();
             return View(menus);
         }
-        public IActionResult Manage()
+        public IActionResult Edit(Guid id)
         {
+            var menu = _dbContext.Menus.Find(id);
             var editbaleMenu = new EditableMenu();
             editbaleMenu.Id = 12;
             return View(editbaleMenu);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Manage(EditableMenu model)
+        public IActionResult Edit(EditableMenu model)
         {
             if(ModelState.IsValid)
             {
