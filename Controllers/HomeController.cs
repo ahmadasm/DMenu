@@ -53,5 +53,15 @@ namespace MenuTest.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        private void UpdateMenu(EditableMenu menu)
+        {
+            var targetMenu = _dbContext.Menus.Find(menu.Id);
+            targetMenu.CssClass = menu.CssClass;
+            targetMenu.Description = menu.Description;
+            targetMenu.IsPublic = menu.IsPublic;
+            targetMenu.Name = targetMenu.Name;
+            _dbContext.Update<Menu>(targetMenu);
+            _dbContext.SaveChanges();
+        }
     }
 }
