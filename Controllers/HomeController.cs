@@ -38,7 +38,7 @@ namespace MenuTest.Controllers
         {
             if(ModelState.IsValid)
             {
-                
+                UpdateMenu(model);  
             }
             return View(model);
         }
