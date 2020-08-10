@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
 using MenuTest.Dal;
 using MenuTest.Models;
 using MenuTest.ViewModels;
@@ -26,7 +27,8 @@ namespace MenuTest.Controllers
         }
         public IActionResult Edit(Guid id)
         {
-            var menu = _dbContext.Menus.Find(id);
+            var menu = _dbContext.Menus.Include(i => i.Items).ThenInclude(ch => ch.Children)
+                .Where(i => i.Id == id).FirstOrDefault();
             if(menu == null)
                 return NotFound();
             
