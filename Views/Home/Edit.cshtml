@@ -27,9 +27,12 @@
                 </div>
                 <div class="panel-body">
                     <ol class="sortable ui-sortable mjs-nestedSortable-branch mjs-nestedSortable-expanded">
-                        @foreach (var item in Model.Items.Where(i => i.ParentId == null))
+                        @if(Model != null && Model.Items != null && Model.Items.Count > 0)
                         {
-                            @await Html.PartialAsync("_ShowEditbaleItem",item)         
+                            @foreach (var item in Model.Items.Where(i => i.ParentId == null))
+                            {
+                                @await Html.PartialAsync("_ShowEditableItem",item)         
+                            }
                         }
                     </ol>
                     <hr>
