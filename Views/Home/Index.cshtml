@@ -22,7 +22,9 @@
                             <td>@menu.Name</td>
                             <td>@menu.Description</td>
                             <td>@menu.PublicToString()</td>
-                            <td></td>
+                            <td>
+                                @Html.ActionLink("ویرایش", "Edit", new {id = menu.Id }, new { @class = "btn btn-default" }) 
+                            </td>
                         </tr>
                     }
                 </tbody>
