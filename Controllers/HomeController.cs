@@ -77,7 +77,7 @@ namespace MenuTest.Controllers
             }
             _dbContext.SaveChanges();
         }
-        private void AddMenuItems(List<string> texts,List<string> Links,List<string> cssClasses,
+        private void AddMenuItems(Guid menuId,List<string> texts,List<string> Links,List<string> cssClasses,
             List<bool> openInNewTab,List<bool> linkIsEditable,List<string> parents)
         {
             
