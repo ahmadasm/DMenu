@@ -8,6 +8,7 @@ namespace MenuTest.Models
         public string Text { get; set; }
         public string Href { get; set; }
         public bool OpenInNewTab { get; set; }
+        public bool LinkIsEditable { get; set; }
         public string CssClass { get; set; }
         public Guid? ParentId { get; set; }
         public Guid MenuId { get; set; }
