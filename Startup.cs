@@ -22,7 +22,7 @@ namespace MenuTest
             services.AddDbContext<MenuDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("MenuDbContext")));
             services.AddControllersWithViews();
-            services.AddSingleton<IDbInitializer,DbInitializer>();
+            services.AddScoped<IDbInitializer,DbInitializer>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
