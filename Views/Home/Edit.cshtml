@@ -27,7 +27,10 @@
                 </div>
                 <div class="panel-body">
                     <ol class="sortable ui-sortable mjs-nestedSortable-branch mjs-nestedSortable-expanded">
-                        
+                        @foreach (var item in Model.Items.Where(i => i.ParentId == null))
+                        {
+                            @await Html.PartialAsync("_ShowEditbaleItem",item)         
+                        }
                     </ol>
                     <hr>
                     <div class="form-group">
