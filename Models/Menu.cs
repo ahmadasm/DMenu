@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 namespace MenuTest.Models
 {
     public class Menu
@@ -8,5 +9,6 @@ namespace MenuTest.Models
         public bool IsPublic { get; set; }
         public string CssClass { get; set; }
         public string Description { get; set; }
+        public virtual ICollection<MenuItem> Items { get; set; }
     }
 }
