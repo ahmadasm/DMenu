@@ -27,8 +27,9 @@ namespace MenuTest.Controllers
         public IActionResult Edit(Guid id)
         {
             var menu = _dbContext.Menus.Find(id);
-            var editbaleMenu = new EditableMenu();
-            editbaleMenu.Id = 12;
+            if(menu == null)
+                return NotFound();
+            var editbaleMenu = new EditableMenu(menu.Id,menu.Name,menu.IsPublic,menu.CssClass,menu.Description);
             return View(editbaleMenu);
         }
         [HttpPost]
