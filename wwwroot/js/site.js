@@ -44,6 +44,7 @@
             SetLink(menuItems[i],i);
             SetCss(menuItems[i],i);
             SetNewTab(menuItems[i],i);
+            SetLinkIsEnabled(menuItems[i],i);
             SetCollapseId(menuItems[i],i);
             //alert(i + " : " + menuItems[i]);
         }
@@ -93,6 +94,13 @@
         var panelCollapseList = $(menuItem).find('.panel-collapse');
         var panelCollapse = panelCollapseList.first();
         panelCollapse.attr('id',newId);
+    }
+    function SetLinkIsEnabled(menuItem,index)
+    {
+        var linkStatusInputs = $(menuItem).find('.menu-item-link-status');
+        var targetInput = linkStatusInputs.first();
+        var newName = 'LinkIsEnabled[' + index + ']';
+        targetInput.attr('name',newName);
     }
     function SetTabCheckboxDefault(index)
     {
