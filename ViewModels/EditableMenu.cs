@@ -9,5 +9,6 @@ namespace MenuTest.ViewModels
         public List<string> Links { get; set; }
         public List<string> CssClasses { get; set; }
         public List<bool> OpenInNewTab { get; set; }
+        public List<bool> LinkIsEnabled { get; set; }
     }
 }
