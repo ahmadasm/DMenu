@@ -29,8 +29,8 @@ namespace MenuTest.Controllers
             var menu = _dbContext.Menus.Find(id);
             if(menu == null)
                 return NotFound();
-            var editbaleMenu = new EditableMenu(menu.Id,menu.Name,menu.IsPublic,menu.CssClass,menu.Description);
-            return View(editbaleMenu);
+            
+            return View(menu);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
