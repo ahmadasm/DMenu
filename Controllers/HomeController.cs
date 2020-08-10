@@ -80,6 +80,7 @@ namespace MenuTest.Controllers
         private void AddMenuItems(Guid menuId,List<string> texts,List<string> Links,List<string> cssClasses,
             List<bool> openInNewTab,List<bool> linkIsEditable,List<string> parents)
         {
+            Dictionary<int,Guid> parentsDict = new Dictionary<int, Guid>();
             int itemsCount = linkIsEditable.Count;
             for (int i = 0; i < itemsCount; i++)
             {
@@ -91,14 +92,22 @@ namespace MenuTest.Controllers
                 item.LinkIsEditable = linkIsEditable[i];
                 item.OpenInNewTab = openInNewTab[i];
                 item.Text = texts[i];
-                item.ParentId = SetParentId(parents[i]);
+                item.ParentId = SetParentId(parents[i],parentsDict);
+                
+                _dbContext.MenuItems.Add(item);
+                _dbContext.SaveChanges();
+                parentsDict.Add(i,item.Id);
             }
         }
-        private Guid? SetParentId(string inputParentId)
+        private Guid? SetParentId(string inputParentId,Dictionary<int,Guid> parentsDict)
         {
             if(string.IsNullOrEmpty(inputParentId))
                 return null;
-            return Guid.NewGuid();
+            if(parentsDict.ContainsKey(Int32.Parse(inputParentId)))
+            {
+                return parentsDict[Int32.Parse(inputParentId)];
+            }
+            return null;
         }
     }
 }
