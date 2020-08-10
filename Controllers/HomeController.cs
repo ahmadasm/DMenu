@@ -103,7 +103,7 @@ namespace MenuTest.Controllers
         }
         private Guid? SetParentId(string inputParentId,Dictionary<int,Guid> parentsDict)
         {
-            if(string.IsNullOrEmpty(inputParentId))
+            if(string.IsNullOrEmpty(inputParentId) || inputParentId == "null")
                 return null;
             if(parentsDict.ContainsKey(Int32.Parse(inputParentId)))
             {
