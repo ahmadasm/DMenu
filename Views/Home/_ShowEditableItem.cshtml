@@ -2,10 +2,17 @@
 @{
     int index = (int)TempData["ItemIndex"];
     TempData["ItemIndex"] = index + 1;
-    string collapseId = "ItemCollapse-" + index.ToString();
+    string strIndex = index.ToString();
+    string itemId = "menuItem_" + strIndex;
+    string collapseId = "ItemCollapse-" + strIndex;
     string collapseHref = "#" + collapseId;
+    string itemText = "Text[" + strIndex + "]";
+    string itemHref = "Links[" + strIndex +"]";
+    string itemLinkIsEnabled = "LinkIsEnabled[" + strIndex + "]";
+    string itemCssClass = "CssClasses[" + strIndex + "]";
+    string itemNewTab = "OpenInNewTab[" + strIndex + "]";
 }
-<li class="webo-menu-item mjs-nestedSortable-leaf mjs-nestedSortable-branch mjs-nestedSortable-expanded" id="menuItem_2">
+<li class="webo-menu-item mjs-nestedSortable-leaf mjs-nestedSortable-branch mjs-nestedSortable-expanded" id="@itemId">
     <div class="menuDiv panel panel-default">
         <div class="panel-heading" role="tab" id="headingOne">
             <h4 class="panel-title">
@@ -18,25 +25,25 @@
             <div class="panel-body">
                 <div class="form-group">
                     <label>متن</label>
-                    <input class="menu-item-name form-control" value="@Model.Text">
+                    <input name="@itemText" class="menu-item-name form-control" value="@Model.Text">
                 </div>
                 <div class="form-group">
                     <label>نشانی اینترنتی</label>
-                    <input class="menu-item-link form-control" value="@Model.Href">
-                    <input type="hidden" value="@Model.LinkIsEditable" class="menu-item-link-status form-control">
+                    <input name="@itemHref" class="menu-item-link form-control" value="@Model.Href">
+                    <input name="@itemLinkIsEnabled" type="hidden" value="@Model.LinkIsEditable" class="menu-item-link-status form-control">
                 </div>
                 <div class="form-group">
                     <label>کلاس CSS</label>
-                    <input class="menu-item-css form-control" value="@Model.CssClass">
+                    <input name="@itemCssClass" class="menu-item-css form-control" value="@Model.CssClass">
                 </div>
                 <div class="form-group">
                     @if(Model.OpenInNewTab)
                     {
-                        <input type="checkbox" class="menu-item-tab" checked>
+                        <input name="@itemNewTab" type="checkbox" class="menu-item-tab" checked>
                     }
                     else
                     {
-                        <input type="checkbox" class="menu-item-tab">
+                        <input name="@itemNewTab" type="checkbox" class="menu-item-tab">
                     }
                     
                     <label>باز شدن در تب جدید</label>
