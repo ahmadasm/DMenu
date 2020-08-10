@@ -8,14 +8,14 @@
     </div>
     <div id="customLinkItem" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
         <div class="panel-body" id="core-custom-link-item">
-            <input id="custom-link-checkbox"type="checkbox" class="webo-menu-item-checkbox" data-text="" data-link="" data-header="پیوند دلخواه" data-link-is-enabled="true" checked>
+            <input id="custom-link-checkbox" type="checkbox" class="webo-menu-item-checkbox" data-text="" data-link="" data-header="پیوند دلخواه" data-link-is-enabled="true" checked>
             <div class="form-group">
                 <label>متن</label>
                 <input id="custom-link-text" class="form-control">
             </div>
             <div class="form-group">
                 <label>نشانی اینترنتی</label>
-                <input id="custom-link-link" class="form-control">
+                <input id="custom-link-href" class="form-control">
             </div>
         </div>
         <div class="panel-footer text-left">
@@ -28,6 +28,10 @@
         $('#custom-link-text').on('input propertychange paste',function(){
             var text = $(this).val();
             $('#custom-link-checkbox').data('text',text);
+        });
+        $('#custom-link-href').on('input propertychange paste',function(){
+            var text = $(this).val();
+            $('#custom-link-checkbox').data('link',text);
         });
     });
 </script>
