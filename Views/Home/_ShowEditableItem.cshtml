@@ -30,7 +30,7 @@
                 <div class="form-group">
                     <label>نشانی اینترنتی</label>
                     <input name="@itemHref" class="menu-item-link form-control" value="@Model.Href">
-                    <input name="@itemLinkIsEnabled" type="hidden" value="@Model.LinkIsEditable" class="menu-item-link-status form-control">
+                    <input name="@itemLinkIsEnabled" type="hidden" value="@Model.LinkIsEditable.ToString()" class="menu-item-link-status form-control">
                 </div>
                 <div class="form-group">
                     <label>کلاس CSS</label>
@@ -39,13 +39,13 @@
                 <div class="form-group">
                     @if(Model.OpenInNewTab)
                     {
-                        <input name="@itemNewTab" type="checkbox" class="menu-item-tab" checked>
+                        <input name="@itemNewTab" type="checkbox" class="menu-item-tab" checked value="true">
                     }
                     else
                     {
-                        <input name="@itemNewTab" type="checkbox" class="menu-item-tab">
+                        <input name="@itemNewTab" type="checkbox" class="menu-item-tab" value="false">
                     }
-                    
+                    <input name="@itemNewTab" type="hidden" value="false">
                     <label>باز شدن در تب جدید</label>
                 </div>
             </div>
