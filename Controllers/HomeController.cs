@@ -40,6 +40,7 @@ namespace MenuTest.Controllers
             {
                 UpdateMenu(model);  
                 ClearAllMenuItems(model.Id);
+
             }
             return View(model);
         }
@@ -75,6 +76,11 @@ namespace MenuTest.Controllers
                 }
             }
             _dbContext.SaveChanges();
+        }
+        private void AddMenuItems(List<string> texts,List<string> Links,List<string> cssClasses,
+            List<bool> openInNewTab,List<bool> linkIsEditable,List<string> parents)
+        {
+            
         }
     }
 }
