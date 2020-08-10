@@ -21,7 +21,8 @@ namespace MenuTest.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var menus = _dbContext.Menus.ToList();
+            return View(menus);
         }
         public IActionResult Manage()
         {
