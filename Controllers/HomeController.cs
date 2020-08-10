@@ -63,5 +63,17 @@ namespace MenuTest.Controllers
             _dbContext.Update<Menu>(targetMenu);
             _dbContext.SaveChanges();
         }
+        private void ClearAllMenuItems(Guid menuId)
+        {
+            var menuItems = _dbContext.MenuItems.Where(i => i.MenuId == menuId).ToList();
+            if(menuItems != null && menuItems.Count > 0)
+            {
+                foreach (var item in menuItems)
+                {
+                    _dbContext.MenuItems.Remove(item);
+                }
+            }
+            _dbContext.SaveChanges();
+        }
     }
 }
