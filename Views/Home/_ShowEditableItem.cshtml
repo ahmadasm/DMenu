@@ -1,14 +1,20 @@
 @model MenuTest.Models.MenuItem
+@{
+    int index = (int)TempData["ItemIndex"];
+    TempData["ItemIndex"] = index + 1;
+    string collapseId = "ItemCollapse-" + index.ToString();
+    string collapseHref = "#" + collapseId;
+}
 <li class="webo-menu-item mjs-nestedSortable-leaf mjs-nestedSortable-branch mjs-nestedSortable-expanded" id="menuItem_2">
     <div class="menuDiv panel panel-default">
         <div class="panel-heading" role="tab" id="headingOne">
             <h4 class="panel-title">
-                <a role="button" data-toggle="collapse" href="#ItemCollapse-3" aria-expanded="false" aria-controls="ItemCollapse-3">
+                <a role="button" data-toggle="collapse" href="@collapseHref" aria-expanded="false" aria-controls="ItemCollapse-3">
                 @Model.Text
                 </a>
             </h4>
         </div>
-        <div id="ItemCollapse-3" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne">
+        <div id="@collapseId" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne">
             <div class="panel-body">
                 <div class="form-group">
                     <label>متن</label>
@@ -41,4 +47,13 @@
             </div>
         </div>
     </div>
+    @if(Model.Children != null && Model.Children.Count > 0)
+    {
+        <ol>
+            @foreach(var child in Model.Children)
+            {
+                @Html.Partial("_ShowEditableItem",child)
+            }
+        </ol>   
+    }
 </li>

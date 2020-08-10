@@ -1,6 +1,7 @@
 ﻿@model MenuTest.Models.Menu
 @{
     ViewData["Title"] = "مدیریت";
+    TempData["ItemIndex"] = 0;
 }
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -31,7 +32,7 @@
                         {
                             @foreach (var item in Model.Items.Where(i => i.ParentId == null))
                             {
-                                @await Html.PartialAsync("_ShowEditableItem",item)         
+                                @Html.Partial("_ShowEditableItem",item)
                             }
                         }
                     </ol>
