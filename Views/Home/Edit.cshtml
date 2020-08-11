@@ -30,7 +30,8 @@
                     <ol class="sortable ui-sortable mjs-nestedSortable-branch mjs-nestedSortable-expanded">
                         @if(Model != null && Model.Items != null && Model.Items.Count > 0)
                         {
-                            @foreach (var item in Model.Items.Where(i => i.ParentId == null))
+                            @foreach (var item in Model.Items.Where(i => i.ParentId == null)
+                                .OrderBy(i => i.CreationDate))
                             {
                                 @Html.Partial("_ShowEditableItem",item)
                             }

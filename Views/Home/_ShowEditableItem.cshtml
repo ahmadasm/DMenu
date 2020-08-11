@@ -65,7 +65,7 @@
     @if(Model.Children != null && Model.Children.Count > 0)
     {
         <ol>
-            @foreach(var child in Model.Children)
+            @foreach(var child in Model.Children.OrderBy(i => i.CreationDate))
             {
                 @Html.Partial("_ShowEditableItem",child)
             }
