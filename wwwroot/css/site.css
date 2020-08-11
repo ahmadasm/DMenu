@@ -20,4 +20,7 @@ body {
   font-family: 'BKoodak' !important;
   font-size: 14px; 
 }
-
+.caret-up{
+  border-top: none;
+  border-bottom: 4px dashed;
+}

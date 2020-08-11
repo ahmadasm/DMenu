@@ -176,4 +176,8 @@
         }
         ReorderMenuItems();
     });
+    $('.btn-collapse').click(function(){
+        var caret = $(this).find('.caret');
+        $(caret).toggleClass('caret-up');
+    });
 });
