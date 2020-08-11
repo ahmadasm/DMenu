@@ -33,3 +33,17 @@
     -moz-border-radius:6px 0 6px 6px;
     border-radius:6px 0 6px 6px;
 }
+.webo-caret{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 0;
+    margin-right: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+.bg-red{
+  background-color: red;
+}
