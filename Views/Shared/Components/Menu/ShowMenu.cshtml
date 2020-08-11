@@ -1,0 +1,16 @@
+﻿@model MenuTest.Models.Menu
+@{
+    string cssClass = "nav navbar-nav " + Model.CssClass;
+}
+@if(Model != null && Model.Items != null && Model.Items.Count > 0)
+{
+    <ul class="@cssClass">
+        @foreach (var item in Model.Items.Where(i => i.ParentId == null)
+            .OrderBy(i => i.CreationDate))
+        {
+            @Html.Partial("_ShowMenuItem",item)
+        }
+    </ul>
+    
+}
+                    
