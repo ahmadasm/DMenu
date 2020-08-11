@@ -16,8 +16,9 @@
     <div class="menuDiv panel panel-default">
         <div class="panel-heading" role="tab" id="headingOne">
             <h4 class="panel-title">
-                <a role="button" data-toggle="collapse" href="@collapseHref" aria-expanded="false" aria-controls="ItemCollapse-3">
-                @Model.Text
+                <span class="menu-item-display-name">@Model.Text</span>
+                <a class="pull-left collapsed" role="button" data-toggle="collapse" href="@collapseHref" aria-expanded="false" aria-controls="ItemCollapse-3">
+                    <span class="caret"></span>
                 </a>
             </h4>
         </div>
