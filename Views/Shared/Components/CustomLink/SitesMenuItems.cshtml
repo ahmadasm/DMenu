@@ -1,13 +1,20 @@
 @model List<MenuTest.Models.Site>
+<style>
+    .caret-up{
+        border-top: none;
+        border-bottom: 4px dashed;
+    }
+</style>
 <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
         <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" data-parent="#menu-item-select-list" href="#siteItem" aria-expanded="false" aria-controls="collapseOne1">
-            سایت ها
+            <span>سایت ها</span>
+            <a class="pull-left collapsed" role="button" data-toggle="collapse" data-parent="#menu-item-select-list" href="#siteItem" aria-expanded="false" aria-controls="collapseOne1">
+                <span class="caret"></span>
             </a>
         </h4>
     </div>
-    <div id="siteItem" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+    <div id="siteItem" class="panel-collapse menu-item-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
         <div class="panel-body" id="core-site-item">
             
             @if(Model != null && Model.Count > 0)

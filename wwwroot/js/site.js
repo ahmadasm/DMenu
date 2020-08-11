@@ -176,8 +176,15 @@
         }
         ReorderMenuItems();
     });
-    $('.btn-collapse').click(function(){
-        var caret = $(this).find('.caret');
+    $('.menu-item-collapse').on('show.bs.collapse', function () {
+        var heading = $(this).siblings('.panel-heading');
+        var caret = heading.find('.caret');
         $(caret).toggleClass('caret-up');
     });
+    $('.menu-item-collapse').on('hide.bs.collapse', function () {
+        var heading = $(this).siblings('.panel-heading');
+        var caret = heading.find('.caret');
+        $(caret).toggleClass('caret-up');
+    });
+    
 });
