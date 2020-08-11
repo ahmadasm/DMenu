@@ -1,0 +1,14 @@
+@model MenuTest.Models.MenuItem
+@if(Model.Children != null && Model.Children.Count > 0)
+{}
+else
+{
+    @if(Model.OpenInNewTab)
+    {
+        <li><a href="@Model.Href" class="@Model.CssClass" target="_blank">@Model.Text</a></li>
+    }
+    else
+    {
+        <li><a href="@Model.Href" class="@Model.CssClass" >@Model.Text</a></li>
+    }
+}
