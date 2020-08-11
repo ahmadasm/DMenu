@@ -136,8 +136,7 @@
         '<h4 class="panel-title"><span class="menu-item-display-name">' + text + 
         '</span><a class="pull-left collapsed" role="button" data-toggle="collapse" href="#ItemCollapse-'+ 
         newItemIndex+ '" aria-expanded="false" aria-controls="collapseOne3">'+
-        '<span class="caret"></span>'
-        '</a></h4></div><div id="ItemCollapse-'+
+        '<span class="caret"></span></a></h4></div><div id="ItemCollapse-'+
         newItemIndex + '" class="panel-collapse menu-item-collapse collapse" role="tabpanel" aria-labelledby="headingOne">'+
         '<div class="panel-body"><div class="form-group"><label>متن</label>'+
         '<input  class="menu-item-name form-control" value="'+
@@ -177,12 +176,12 @@
         }
         ReorderMenuItems();
     });
-    $('.menu-item-collapse').on('show.bs.collapse', function () {
+    $(document).on('show.bs.collapse','.menu-item-collapse',function () {
         var heading = $(this).siblings('.panel-heading');
         var caret = heading.find('.caret');
         $(caret).toggleClass('caret-up');
     });
-    $('.menu-item-collapse').on('hide.bs.collapse', function () {
+    $(document).on('hide.bs.collapse','.menu-item-collapse',function () {
         var heading = $(this).siblings('.panel-heading');
         var caret = heading.find('.caret');
         $(caret).toggleClass('caret-up');
