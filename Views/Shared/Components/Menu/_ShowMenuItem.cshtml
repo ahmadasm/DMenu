@@ -1,0 +1,7 @@
+@model MenuTest.Models.MenuItem
+@if(Model.Children != null && Model.Children.Count > 0)
+{}
+else
+{
+    <li><a href="@Model.Href" class="@Model.CssClass">@Model.Text</a></li>
+}
