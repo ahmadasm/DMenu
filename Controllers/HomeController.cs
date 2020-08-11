@@ -93,7 +93,7 @@ namespace MenuTest.Controllers
                 item.OpenInNewTab = openInNewTab[i];
                 item.Text = texts[i];
                 item.ParentId = SetParentId(parents[i],parentsDict);
-                
+                item.CreationDate = DateTime.Now;
                 _dbContext.MenuItems.Add(item);
                 _dbContext.SaveChanges();
                 parentsDict.Add(i,item.Id);
