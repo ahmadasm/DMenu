@@ -30,7 +30,7 @@
     });
     $(document).on('input propertychange paste', '.menu-item-name', function(){ 
         var menuItem = $(this).closest('.webo-menu-item');
-        var itemTitleList = $(menuItem).find('.panel-title a');
+        var itemTitleList = $(menuItem).find('.panel-title .menu-item-display-name');
         var itemTitle = itemTitleList.first();
         itemTitle.html($(this).val());
     });
