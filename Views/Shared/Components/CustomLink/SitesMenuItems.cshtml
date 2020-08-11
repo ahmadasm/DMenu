@@ -2,13 +2,13 @@
 <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
         <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" data-parent="#menu-item-select-list" href="#customLinkItem" aria-expanded="false" aria-controls="collapseOne1">
+            <a role="button" data-toggle="collapse" data-parent="#menu-item-select-list" href="#siteItem" aria-expanded="false" aria-controls="collapseOne1">
             سایت ها
             </a>
         </h4>
     </div>
-    <div id="customLinkItem" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-        <div class="panel-body" id="core-custom-link-item">
+    <div id="siteItem" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+        <div class="panel-body" id="core-site-item">
             
             @if(Model != null && Model.Count > 0)
             {
@@ -23,19 +23,7 @@
             }
         </div>
         <div class="panel-footer text-left">
-            <button type="button" class="btn-add-menu-item btn btn-info" data-items-wrapper-id="#core-custom-link-item" >افزودن</button>
+            <button type="button" class="btn-add-menu-item btn btn-info" data-items-wrapper-id="#core-site-item" >افزودن</button>
         </div>
     </div>
 </div>
-<script>
-    $(document).ready(function(){
-        $('#custom-link-text').on('input propertychange paste',function(){
-            var text = $(this).val();
-            $('#custom-link-checkbox').data('text',text);
-        });
-        $('#custom-link-href').on('input propertychange paste',function(){
-            var text = $(this).val();
-            $('#custom-link-checkbox').data('link',text);
-        });
-    });
-</script>
