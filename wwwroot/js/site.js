@@ -133,11 +133,12 @@
             readonlyAttribute = "readonly";
         var newItem = '<li class="webo-menu-item mjs-nestedSortable-leaf mjs-nestedSortable-branch mjs-nestedSortable-expanded" id="menuItem_2">'+
         '<div class="menuDiv panel panel-default"><div class="panel-heading" role="tab" id="headingOne">'+
-        '<h4 class="panel-title"><a role="button" data-toggle="collapse" href="#ItemCollapse-'+ 
+        '<h4 class="panel-title"><span class="menu-item-display-name">' + text + 
+        '</span><a class="pull-left collapsed" role="button" data-toggle="collapse" href="#ItemCollapse-'+ 
         newItemIndex+ '" aria-expanded="false" aria-controls="collapseOne3">'+
-        text +
+        '<span class="caret"></span>'
         '</a></h4></div><div id="ItemCollapse-'+
-        newItemIndex + '" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne">'+
+        newItemIndex + '" class="panel-collapse menu-item-collapse collapse" role="tabpanel" aria-labelledby="headingOne">'+
         '<div class="panel-body"><div class="form-group"><label>متن</label>'+
         '<input  class="menu-item-name form-control" value="'+
         text + '"></div><div class="form-group"><label>نشانی اینترنتی</label><input class="menu-item-link form-control" value="'+
