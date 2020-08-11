@@ -144,7 +144,7 @@
         link + '" ' + readonlyAttribute + '><input type="hidden" name="LinkIsEnabled[' + newItemIndex + ']" value="' +
         linkIsEnabled +'" class="menu-item-link-status form-control"></div><div class="form-group"><label>کلاس CSS</label><input class="menu-item-css form-control">'+
         '</div><div class="form-group"><input type="checkbox" class="menu-item-tab" data-val="true" data-val-required="The Boolean field is required." name="OpenInNewTab[' +
-        newItemIndex + ']" value="true" id="OpenInNewTab_' + newItemIndex + '_"><input name="OpenInNewTab[' + newItemIndex +']" type="hidden" value="false">&nbsp;<label>باز شدن در تب جدید </label>'+
+        newItemIndex + ']" value="true" id="OpenInNewTab_' + newItemIndex + '_"><input name="OpenInNewTab[' + newItemIndex +']" type="hidden" value="false" class="menu-item-tab">&nbsp;<label>باز شدن در تب جدید </label>'+
         '</div></div><div class="panel-footer text-left"><button type="button" class="btn-remove-menu-item btn btn-danger" >حذف</button>'+
         '</div></div></div></li>';
         $('.sortable').append(newItem);
