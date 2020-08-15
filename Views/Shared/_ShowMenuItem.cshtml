@@ -1,22 +1,24 @@
 @model MenuTest.Models.MenuItem
 @{
     bool isSubMenu = false;
+    string menuClass = "dropdown-toggle " + Model.CssClass;
     if(Model.Parent != null)
         isSubMenu = true;
     string dropdownCssClass = "dropdown";
     if(isSubMenu)
         dropdownCssClass = "dropdown dropdown-submenu";
+    
 }
 @if(Model.Children != null && Model.Children.Count > 0)
 {
     <li class="@dropdownCssClass">
         @if(isSubMenu)
         {
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@Model.Text</a>
+            <a href="#" class="@menuClass" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@Model.Text</a>
         }
         else
         {
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@Model.Text <span class="caret"></span></a>
+            <a href="#" class="@menuClass" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@Model.Text <span class="caret"></span></a>
         }
         
         <ul class="dropdown-menu">
